@@ -3,10 +3,13 @@ import os
 
 # object.jsonを読み込む関数
 def load_object_data():
-    # 'prog/json' フォルダ内の object.json を指定
-    json_path = os.path.join(os.path.dirname(__file__), '..', 'json', 'object.json')
-
-    # ファイルの存在を確認
+    # ファイルのパスをプロジェクトのルートから指定
+    json_path = os.path.join(os.path.dirname(__file__), 'json', 'object.json')
+    
+    # パスを確認
+    print(f"Loading data from: {json_path}")
+    
+    # ファイルが存在するかを確認
     if not os.path.exists(json_path):
         raise FileNotFoundError(f"指定されたファイルが見つかりません: {json_path}")
     
