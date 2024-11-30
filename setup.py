@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='TSPy',  # ライブラリ名
+    name='TerraSurvivalPy',  # ライブラリ名
     version='0.1',      # バージョン
     packages=find_packages(),
     description='test',  # ライブラリの説明
