@@ -3,13 +3,13 @@ import os
 
 # object.jsonを読み込む関数
 def load_object_data():
-    # 自分のプロジェクトディレクトリのパスを指定
-    json_path = './prog/json/object.json'  # この場所にファイルを置いていることを確認
+    # Google Colab上では、ファイルパスを変更する必要があります。
+    json_path = '/content/prog/json/object.json'  # object.jsonの絶対パスを指定
 
     # ファイルが存在するか確認
     if not os.path.exists(json_path):
         raise FileNotFoundError(f"{json_path} が見つかりません")
-
+    
     # JSONファイルを開く
     with open(json_path, 'r') as file:
         return json.load(file)
