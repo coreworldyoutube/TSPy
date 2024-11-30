@@ -1,8 +1,12 @@
 import json
+import os
 
 # object.jsonを読み込む関数
 def load_object_data():
-    with open('object.json', 'r') as file:
+    # 現在のスクリプトのディレクトリから相対パスでファイルを指定
+    json_path = os.path.join(os.path.dirname(__file__), 'object.json')
+    
+    with open(json_path, 'r') as file:
         return json.load(file)
 
 # 読み込んだデータを利用する
