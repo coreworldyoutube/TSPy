@@ -3,8 +3,8 @@ import os
 
 # object.jsonを読み込む関数
 def load_object_data():
-    # 現在のスクリプトのディレクトリから相対パスでファイルを指定
-    json_path = os.path.join(os.path.dirname(__file__), 'object.json')
+    # 'prog/json' フォルダ内の object.json を指定
+    json_path = os.path.join(os.path.dirname(__file__), 'json', 'object.json')
     
     with open(json_path, 'r') as file:
         return json.load(file)
