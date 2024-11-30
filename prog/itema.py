@@ -1,18 +1,16 @@
 import json
 import os
 
-# object.jsonを読み込む関数
 def load_object_data():
-    # GitHubリポジトリをクローンしたディレクトリから相対パスでファイルを指定
-    json_path = 'TerraSurvivalPy/prog/json/object.json'
+    """
+    JSONファイルからデータを読み込む関数。
+    ファイルが存在しない場合はエラーメッセージを表示。
+    """
+    json_path = os.path.join(os.path.dirname(__file__), 'json', 'object.json')  # JSONファイルのパス
 
+    # ファイルの存在確認と読み込み
+    if not os.path.exists(json_path):
+        raise FileNotFoundError(f"Error: {json_path} not found.")
+    
     with open(json_path, 'r') as file:
         return json.load(file)
-
-# 読み込んだデータを利用する
-def get_object_value(object_name):
-    data = load_object_data()  # object.jsonの内容を読み込む
-    return data.get(object_name, "Object not found")  # 存在しない場合はエラーメッセージを返す
-
-# "gold" の値を取得
-print(get_object_value('gold'))  # 期待値: 2
