@@ -4,7 +4,7 @@ import os
 # object.jsonを読み込む関数
 def load_object_data():
     # GitHubリポジトリをクローンしたディレクトリから相対パスでファイルを指定
-    json_path = '/content/TerraSurvivalPy/prog/json/object.json'
+    json_path = 'TerraSurvivalPy/prog/json/object.json'
 
     with open(json_path, 'r') as file:
         return json.load(file)
