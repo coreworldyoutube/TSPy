@@ -1,9 +1,10 @@
 import json
+import os
 
 # object.jsonを読み込む関数
 def load_object_data():
-    # Google Colabのパス
-    json_path = '/content/prog/json/object.json'
+    # GitHubリポジトリをクローンしたディレクトリから相対パスでファイルを指定
+    json_path = '/content/TerraSurvivalPy/prog/json/object.json'
 
     with open(json_path, 'r') as file:
         return json.load(file)
