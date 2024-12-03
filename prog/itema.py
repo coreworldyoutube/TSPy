@@ -14,3 +14,10 @@ def load_object_data():
     
     with open(json_path, 'r') as file:
         return json.load(file)
+
+def get_object_value(key, data):
+    """
+    読み込んだデータから指定されたキーの値を取得する関数。
+    キーが存在しない場合は None を返す。
+    """
+    return data.get(key, None)  # キーが存在しない場合は None を返す
